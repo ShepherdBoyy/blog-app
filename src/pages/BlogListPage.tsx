@@ -42,7 +42,7 @@ function BlogListPage() {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Blog Posts</h1>
         <Link
-          to="/create"
+          to="/blog-app/create"
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition inline-flex items-center gap-2"
         >
           📝 <span>New Blog</span>
@@ -63,7 +63,7 @@ function BlogListPage() {
             <p className="text-gray-600 mt-2">{blog.content}</p>
             <div className="mt-4 flex gap-4">
               <Link
-                to={`/edit/${blog.id}`}
+                to={`/blog-app/edit/${blog.id}`}
                 className="inline-block bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500 transition"
               >
                 ✏️ Edit

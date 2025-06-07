@@ -8,11 +8,11 @@ import EditBlogPage from "../pages/EditBlogPage";
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<BlogListPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/create" element={<CreateBlogPage />} />
-      <Route path="/edit/:id" element={<EditBlogPage />} />
+      <Route path="/blog-app" element={<BlogListPage />} />
+      <Route path="/blog-app/login" element={<LoginPage />} />
+      <Route path="/blog-app/register" element={<RegisterPage />} />
+      <Route path="/blog-app/create" element={<CreateBlogPage />} />
+      <Route path="/blog-app/edit/:id" element={<EditBlogPage />} />
     </Routes>
   );
 }

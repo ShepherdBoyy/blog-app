@@ -26,7 +26,7 @@ function EditBlogPage() {
   const handleUpdate = async (e: FormEvent) => {
     e.preventDefault();
     await supabase.from("blogs").update({ title, content }).eq("id", id);
-    navigate("/");
+    navigate("/blog-app");
   };
 
   return (
