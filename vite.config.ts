@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/blog-app/login/",
+  base: "/blog-app/",
   plugins: [react(), tailwindcss()],
 });
