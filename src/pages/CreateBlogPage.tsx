@@ -21,7 +21,7 @@ function CreateBlogPage() {
       },
     ]);
 
-    if (!error) navigate("/blog-app");
+    if (!error) navigate("/home");
   };
 
   return (

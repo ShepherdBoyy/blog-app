@@ -16,7 +16,7 @@ function RegisterPage() {
       password,
     });
     if (error) setError(error.message);
-    else navigate("/blog-app/login");
+    else navigate("/");
   };
 
   return (

@@ -21,7 +21,7 @@ function LoginPage() {
       setError(error.message);
     } else {
       dispatch(setUser(data.user?.email || ""));
-      navigate("/blog-app");
+      navigate("/home");
     }
   };
 
