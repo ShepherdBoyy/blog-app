@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { supabase } from "../supabase/client";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -49,6 +49,16 @@ function RegisterPage() {
             Register
           </button>
         </form>
+
+        <p className="text-center mt-4 text-sm">
+          Already have an account?{" "}
+          <Link
+            to="/"
+            className="text-blue-600 hover:underline hover:text-blue-800"
+          >
+            Login here
+          </Link>
+        </p>
       </div>
     </div>
   );

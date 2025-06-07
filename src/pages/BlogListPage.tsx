@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase/client";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function BlogListPage() {
+  const navigate = useNavigate();
   const [blogs, setBlogs] = useState<any[]>([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -31,9 +32,19 @@ function BlogListPage() {
     const { error } = await supabase.from("blogs").delete().eq("id", id);
 
     if (!error) {
-      window.location.reload(); // This reloads the entire page
+      // Remove the deleted blog from state without reloading
+      setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog.id !== id));
     } else {
       console.error("Failed to delete blog:", error.message);
+    }
+  };
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (!error) {
+      navigate("/"); // Redirect to login page
+    } else {
+      console.error("Logout failed:", error.message);
     }
   };
 
@@ -47,6 +58,12 @@ function BlogListPage() {
         >
           📝 <span>New Blog</span>
         </Link>
+        <button
+          onClick={handleLogout}
+          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition"
+        >
+          🔓 Logout
+        </button>
       </div>
 
       {loading && <p>Loading...</p>}
